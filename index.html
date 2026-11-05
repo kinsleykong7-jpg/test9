@@ -106,10 +106,10 @@ body::before{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;op
 <div id="open"><div class="tw" id="tw"><svg id="ms" viewBox="0 0 400 400" role="img" aria-label="Typewriter">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6e4df"/><stop offset="1" stop-color="#d2d0cb"/></linearGradient>
-<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8d8a85"/><stop offset="1" stop-color="#6c6964"/></linearGradient>
+<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a9792"/><stop offset="1" stop-color="#7a7772"/></linearGradient>
 <linearGradient id="plat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4f57"/><stop offset=".25" stop-color="#2a2d32"/><stop offset="1" stop-color="#15171a"/></linearGradient>
 <linearGradient id="silv" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8f9296"/><stop offset=".5" stop-color="#e3e5e7"/><stop offset="1" stop-color="#8f9296"/></linearGradient>
-<radialGradient id="keyg" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#3a6b58"/><stop offset="1" stop-color="#14301f"/></radialGradient>
+<radialGradient id="keyg" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#2f5a48"/><stop offset="1" stop-color="#0f2418"/></radialGradient>
 <clipPath id="pc"><rect x="91" y="-20" width="164" height="128"/></clipPath>
 <clipPath id="win"><polygon points="133,118 269,118 304,189 97,189"/></clipPath>
 <filter id="ink2" x="-2%" y="-5%" width="104%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale=".6" xChannelSelector="R" yChannelSelector="G"/></filter>
@@ -123,7 +123,8 @@ body::before{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;op
 <rect x="-500" y="70" width="1400" height="40" fill="url(#plat)"/>
 <rect x="28" y="32" width="62" height="35" fill="#9b9969"/><rect x="257" y="32" width="82" height="35" fill="#9b9969"/>
 <g id="ticks"></g>
-<rect x="91" y="-10" width="164" height="120" fill="#F7F4EC"/>
+<!-- 纯白纸张 -->
+<rect x="91" y="-10" width="164" height="120" fill="#FFFFFF"/>
 <rect x="91" y="-10" width="3" height="120" fill="#000" opacity=".07"/><rect x="252" y="-10" width="3" height="120" fill="#000" opacity=".07"/>
 <g fill="#b9a888" opacity=".55"><circle cx="112" cy="26" r=".7"/><circle cx="168" cy="44" r=".6"/><circle cx="229" cy="18" r=".8"/><circle cx="141" cy="70" r=".6"/><circle cx="238" cy="62" r=".7"/><circle cx="123" cy="92" r=".6"/></g>
 <g clip-path="url(#pc)"><g id="lines" filter="url(#ink2)" font-family="Special Elite, Courier New, monospace" font-size="5.6" fill="#1b1815" style="white-space:pre;transform:translateY(98px)"></g></g>
@@ -139,8 +140,9 @@ body::before{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;op
 <g id="tb"><polygon points="197,106 203,106 202,150 198,150" fill="#141414"/><rect x="196" y="104" width="8" height="4" fill="#2a2a2a"/></g>
 <polygon points="185,86 190,86 197,121 188,121" fill="#161616"/><polygon points="203,86 208,86 211,121 201,121" fill="#161616"/>
 <path d="M168 120h64l6 22h-76z" fill="#2a2a2a"/><rect x="190" y="128" width="20" height="18" fill="#101010"/><circle cx="176" cy="130" r="2" fill="#aaa"/><circle cx="224" cy="130" r="2" fill="#aaa"/>
-<text x="236" y="257" font-family="Caveat, cursive" font-size="19" fill="#c9c6bf" opacity=".55" transform="translate(.7 .9)">Kinsley-kong</text>
-<text x="236" y="257" font-family="Caveat, cursive" font-size="19" fill="#1f3d33" stroke="#0f2a22" stroke-width=".3">Kinsley-kong</text>
+<!-- Logo 改成 Krisiko -->
+<text x="236" y="257" font-family="Caveat, cursive" font-size="19" fill="#c9c6bf" opacity=".55" transform="translate(.7 .9)">Krisiko</text>
+<text x="236" y="257" font-family="Caveat, cursive" font-size="19" fill="#1f3d33" stroke="#0f2a22" stroke-width=".3">Krisiko</text>
 <g id="keys"></g>
 <rect width="400" height="400" fill="#000" opacity=".16" filter="url(#grain)" style="mix-blend-mode:multiply;pointer-events:none"/>
 </svg></div><p id="gh">tap to begin</p></div>
@@ -244,12 +246,12 @@ const arm=$('armg'),svg=arm.ownerSVGElement;let drag=false,ang=0,playing=false;
 const HINT='drag the needle onto the record.';
 function setAng(a){ang=a;arm.style.transform='rotate('+a+'deg)'}
 function pt(e){const r=svg.getBoundingClientRect();return[(e.clientX-r.left)*260/r.width,(e.clientY-r.top)*190/r.height]}
-function stop(){playing=false;$('rec').classList.remove('spin');$('hint').textContent=HINT}
+function stop(){playing=false;\( ('rec').classList.remove('spin'); \)('hint').textContent=HINT}
 arm.addEventListener('pointerdown',e=>{drag=true;arm.setPointerCapture(e.pointerId);arm.style.transition='none';if(playing)stop();e.preventDefault()});
 arm.addEventListener('pointermove',e=>{if(!drag)return;const p=pt(e);setAng(Math.max(0,Math.min(62,Math.atan2(228-p[0],p[1]-30)*180/Math.PI)))});
 function release(){
   if(!drag)return;drag=false;arm.style.transition='';
-  if(ang>=28&&ang<=50){playing=true;$('rec').classList.add('spin');$('hint').textContent='now spinning: Winter Chill. (no sound in this preview)'}
+  if(ang>=28&&ang<=50){playing=true;\( ('rec').classList.add('spin'); \)('hint').textContent='now spinning: Winter Chill. (no sound in this preview)'}
   else setAng(0);
 }
 arm.addEventListener('pointerup',release);arm.addEventListener('pointercancel',release);
@@ -260,7 +262,7 @@ function startMain(){
   typeInto($('tn'),"No.22",{ms:60});
   typeInto($('l1'),"HOURS LIVED",{ms:45});
   typeInto($('l2'),"NEXT BIRTHDAY",{ms:45},()=>{
-    tick();setInterval(tick,1000);$('a').classList.add('on');$('b').classList.add('on');
+    tick();setInterval(tick,1000);\( ('a').classList.add('on'); \)('b').classList.add('on');
     $('hint').textContent=HINT;requestAnimationFrame(loop);
     WORDS.forEach((w,k)=>k<4?seed(w[0],w[1]):setTimeout(()=>spawn(w[0],w[1]),600+(k-4)*(rm?40:1100)));
   });
@@ -301,17 +303,18 @@ async function type(){
     const line=LINES[li];
     for(let n=0;n<line.length&&!cancel;n++){
       const ch=line[n];strike(ch);$('L'+li).textContent=line.slice(0,n+1);setCar(n+1);
-      await sleep(rm?10:62+R(0,70)+(ch===' '?25:0)+(',.'.indexOf(ch)>-1?110:0));
+      // 打字速度已放慢
+      await sleep(rm?10:115+R(25,95)+(ch===' '?45:0)+(',.'.indexOf(ch)>-1?200:0));
     }
     if(cancel)break;
-    if(line.length){ding();await sleep(rm?50:420)}
+    if(line.length){ding();await sleep(rm?50:480)}
     zip();setCar(0,.3);$('lines').style.transform='translateY('+(BASE-(li+1)*LH)+'px)';
-    await sleep(rm?50:560);
+    await sleep(rm?50:620);
   }
   finishPaper();
 }
-function finishPaper(){stage=2;$('tw').classList.add('dim');$('gh').style.opacity=0;$('pop').classList.add('on')}
-function leavePop(){stage=3;$('pop').classList.add('out');$('open').classList.add('gone');setTimeout(startMain,500)}
+function finishPaper(){stage=2;\( ('tw').classList.add('dim'); \)('gh').style.opacity=0;$('pop').classList.add('on')}
+function leavePop(){stage=3;\( ('pop').classList.add('out'); \)('open').classList.add('gone');setTimeout(startMain,500)}
 function initIntro(){
   build();
   $('open').addEventListener('click',()=>{
@@ -326,4 +329,4 @@ function begin(){initIntro()}
 Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,1500))]).then(begin);
 </script>
 </body>
-  </html>
+</html>
